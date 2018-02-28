@@ -1,0 +1,17 @@
+---
+declared-services:
+  a2pradeesh:
+    label: dashDB
+    plan: Entry
+applications:
+# replace the host variable below with your own unique one, as this one can be already taken
+- name: a2pradeesh123
+  memory: 512M
+  instances: 1
+  path: .
+  host: a2pradeesh123
+  framework: node
+  command:    node app.js
+  buildpack:  sdk-for-nodejs
+  services:
+  - a2pradeesh
